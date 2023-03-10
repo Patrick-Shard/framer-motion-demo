@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Button } from 'chayns-components';
-import { m } from 'framer-motion';
+import { domMax, LazyMotion, m } from 'framer-motion';
 import './buttonWrapper.scss';
 
 type ButtonWrapperProps = {
@@ -9,9 +9,11 @@ type ButtonWrapperProps = {
 
 const ButtonWrapper: FC<ButtonWrapperProps> = ({ addItem }) => (
     // Motion div with layout prop allows a layout group to be created to animate the button smoothly when an element in the list is removed
-    <m.div layout className="button-wrapper__container">
-        <Button onClick={addItem}>Hinzufügen</Button>
-    </m.div>
+    <LazyMotion features={domMax}>
+        <m.div layout className="button-wrapper__container">
+            <Button onClick={addItem}>Hinzufügen</Button>
+        </m.div>
+    </LazyMotion>
 );
 
 export default ButtonWrapper;
