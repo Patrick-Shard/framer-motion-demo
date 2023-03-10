@@ -4,6 +4,7 @@ import { Item } from '../types/item';
 import ButtonWrapper from './button-wrapper/ButtonWrapper';
 import ListWrapper from './list-wrapper/ListWrapper';
 import './app.scss';
+import { addWindowMetricsListener } from 'chayns-api';
 
 const items: Item[] = [
     {
@@ -27,6 +28,10 @@ export const App = () => {
     const removeItem = (id: number) => {
         setList(list.filter((item) => item.id !== id));
     };
+
+    void addWindowMetricsListener(() => {
+        setList((prevList) => [...prevList]);
+    });
 
     const addItem = () => {
         setList((prevList) => [
