@@ -24,8 +24,8 @@ Then you will have the following commands available:
 
 ### `npm run dev`
 
-This starts the project with a local server for development. Typically, this will
-be on [`http://localhost:1234/`](http://localhost:1234/), but this
+This starts the project with a local server for development. Typically, this
+will be on [`http://localhost:1234/`](http://localhost:1234/), but this
 [can be adjusted](https://github.com/TobitSoftware/chayns-toolkit#development-options).
 
 ### `npm run build`
