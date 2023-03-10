@@ -39,7 +39,11 @@ export const App = () => {
 
     return (
         <div>
-            <ListWrapper list={list} removeItem={removeItem} />
+            <ListWrapper
+                list={list}
+                removeItem={removeItem}
+                setList={setList}
+            />
             <ButtonWrapper addItem={addItem} />
         </div>
     );

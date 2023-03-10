@@ -1,38 +1,55 @@
 import React from 'react';
 import { ContextMenu, List, ListItem } from 'chayns-components';
+import { AnimatePresence, motion, Reorder } from 'framer-motion';
 import { Item } from '../../types/item';
+import './listWrapper.scss';
 
 type ListWrapperProps = {
     list: Item[];
     removeItem: (id: number) => void;
+    setList: (list: Item[]) => void;
 };
 
 const ListWrapper: React.FunctionComponent<ListWrapperProps> = ({
     list,
     removeItem,
+    setList,
 }) => (
-    <div>
+    <motion.div layout>
         <List>
-            {list.map((item) => (
-                <ListItem
-                    key={item.id}
-                    title={item.name}
-                    right={
-                        <ContextMenu
+            <Reorder.Group values={list} onReorder={setList}>
+                <AnimatePresence>
+                    {list.map((item) => (
+                        <Reorder.Item
+                            value={item}
                             key={item.id}
-                            items={[
-                                {
-                                    text: 'Löschen',
-                                    icon: 'fa fa-trash',
-                                    onClick: () => removeItem(item.id),
-                                },
-                            ]}
-                        />
-                    }
-                />
-            ))}
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: 50 }}
+                        >
+                            <ListItem
+                                key={item.id}
+                                title={item.name}
+                                right={
+                                    <ContextMenu
+                                        key={item.id}
+                                        items={[
+                                            {
+                                                text: 'Löschen',
+                                                icon: 'fa fa-trash',
+                                                onClick: () =>
+                                                    removeItem(item.id),
+                                            },
+                                        ]}
+                                    />
+                                }
+                            />
+                        </Reorder.Item>
+                    ))}
+                </AnimatePresence>
+            </Reorder.Group>
         </List>
-    </div>
+    </motion.div>
 );
 
 export default ListWrapper;
