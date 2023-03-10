@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContextMenu, List, ListItem } from 'chayns-components';
-import { AnimatePresence, motion, Reorder } from 'framer-motion';
+import { AnimatePresence, m, Reorder } from 'framer-motion';
 import { Item } from '../../types/item';
 import './listWrapper.scss';
 
@@ -15,11 +15,18 @@ const ListWrapper: React.FunctionComponent<ListWrapperProps> = ({
     removeItem,
     setList,
 }) => (
-    <motion.div layout>
+    // layout is required for the list to animate correctly
+    // In essence it keeps track of changes in the layout and animates them smoothly instead of the element instantly appearing at its new position
+    <m.div layout>
         <List>
             <Reorder.Group values={list} onReorder={setList}>
+                {/* AnimatePresence is required for exit animations.
+                     It allows FramerMotion to keep track of motion elements leaving the dom */}
                 <AnimatePresence>
                     {list.map((item) => (
+                        // Other than being generally required it is important to pass a valid key to reorder.item for AnimatePresence to correctly
+                        // track the elements
+                        // Reorder.Item is not required a motion.div would work just as well but moving items around is fun
                         <Reorder.Item
                             value={item}
                             key={item.id}
@@ -50,7 +57,7 @@ const ListWrapper: React.FunctionComponent<ListWrapperProps> = ({
                 </AnimatePresence>
             </Reorder.Group>
         </List>
-    </motion.div>
+    </m.div>
 );
 
 export default ListWrapper;

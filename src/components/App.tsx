@@ -41,6 +41,8 @@ export const App = () => {
 
     return (
         <div className="app__wrapper">
+            {/* Layout Groups keeps track of changes in all it's childrens layouts and allows layouts that depend
+                on each other's position to animate correctly */}
             <LayoutGroup>
                 <ListWrapper
                     list={list}
