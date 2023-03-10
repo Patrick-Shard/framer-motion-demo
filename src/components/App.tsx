@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { LayoutGroup } from 'framer-motion';
 import { Item } from '../types/item';
 import ButtonWrapper from './button-wrapper/ButtonWrapper';
 import ListWrapper from './list-wrapper/ListWrapper';
+import './app.scss';
 
 const items: Item[] = [
     {
@@ -38,13 +40,15 @@ export const App = () => {
     };
 
     return (
-        <div>
-            <ListWrapper
-                list={list}
-                removeItem={removeItem}
-                setList={setList}
-            />
-            <ButtonWrapper addItem={addItem} />
+        <div className="app__wrapper">
+            <LayoutGroup>
+                <ListWrapper
+                    list={list}
+                    removeItem={removeItem}
+                    setList={setList}
+                />
+                <ButtonWrapper addItem={addItem} />
+            </LayoutGroup>
         </div>
     );
 };
