@@ -1,5 +1,5 @@
 /* eslint-disable */
-// noinspection JSUnusedGlobalSymbols,JSValidateJSDoc,SpellCheckingInspection,JSDeprecatedSymbols,TypeScriptRedundantGenericType
+// noinspection JSUnusedGlobalSymbols,JSValidateJSDoc,SpellCheckingInspection,JSDeprecatedSymbols,TypeScriptRedundantGenericType,GrazieInspection
 /// <reference types="react" />
 /// <reference types="node" />
 
@@ -110,7 +110,10 @@ declare module 'chayns-components/dist/esm/react-chayns-input/component/Input' {
     /**
      * A text input that can be validated and decorated with different designs.
      */
-    export default class Input extends React.PureComponent<IInputProps, InputState> {
+    export default class Input extends React.PureComponent<
+        IInputProps,
+        InputState
+    > {
         static BORDER_DESIGN: number;
         static BOTTOM_DYNAMIC: number;
 
@@ -218,7 +221,10 @@ declare module 'chayns-components/dist/esm/react-chayns-accordion/component/Acco
      * Accordions are collapsible sections that are toggled by interacting with a
      * permanently visible header.
      */
-    export default class Accordion extends React.PureComponent<IAccordionProps, AccordionState> {
+    export default class Accordion extends React.PureComponent<
+        IAccordionProps,
+        AccordionState
+    > {
         accordion: any;
 
         body: any;
@@ -239,9 +245,17 @@ declare module 'chayns-components/dist/esm/react-chayns-accordion/component/Acco
 
         handleAccordionClick: (event: any) => void;
 
-        accordionCloseListener(event: any, preventOnClose: any, controlledChange?: boolean): void;
+        accordionCloseListener(
+            event: any,
+            preventOnClose: any,
+            controlledChange?: boolean
+        ): void;
 
-        accordionOpenListener(event: any, preventOnOpen: any, controlledChange?: boolean): void;
+        accordionOpenListener(
+            event: any,
+            preventOnOpen: any,
+            controlledChange?: boolean
+        ): void;
 
         render(): JSX.Element;
     }
@@ -282,7 +296,10 @@ declare module 'chayns-components/dist/esm/react-chayns-amountcontrol/component/
         stopPropagation: boolean;
     }
 
-    export default class AmountInput extends React.PureComponent<IAmountInputProps, {}> {
+    export default class AmountInput extends React.PureComponent<
+        IAmountInputProps,
+        {}
+    > {
         inputRef: any;
 
         componentDidMount(): void;
@@ -312,7 +329,10 @@ declare module 'chayns-components/dist/esm/react-chayns-amountcontrol/component/
         color?: string;
     }
 
-    export default class ControlButton extends React.PureComponent<IControlButtonProps, {}> {
+    export default class ControlButton extends React.PureComponent<
+        IControlButtonProps,
+        {}
+    > {
         render(): JSX.Element;
     }
 }
@@ -486,7 +506,10 @@ declare module 'chayns-components/dist/esm/react-chayns-calendar/component/Month
         }[];
     }
 
-    export default class MonthTable extends React.PureComponent<IMonthTableProps, {}> {
+    export default class MonthTable extends React.PureComponent<
+        IMonthTableProps,
+        {}
+    > {
         static isActivated(activated: any, date: any): boolean;
 
         static getHighlightedData(
@@ -563,7 +586,10 @@ declare module 'chayns-components/dist/esm/react-chayns-calendar/component/Calen
     /**
      * An interactive grid calendar that can highlight specified dates.
      */
-    export default class Calendar extends React.Component<ICalendarProps, CalendarState> {
+    export default class Calendar extends React.Component<
+        ICalendarProps,
+        CalendarState
+    > {
         moveSwipeX: any;
 
         newMonths: {
@@ -694,7 +720,11 @@ declare module 'chayns-components/dist/esm/utils/color/index' {
     };
 }
 declare module 'chayns-components/dist/esm/utils/restrictInterval' {
-    export default function restrictInterval(value: any, min: any, max: any): number;
+    export default function restrictInterval(
+        value: any,
+        min: any,
+        max: any
+    ): number;
 }
 declare module 'chayns-components/dist/esm/react-chayns-color_picker/component/colorArea/ColorArea' {
     import './ColorArea.scss';
@@ -715,7 +745,10 @@ declare module 'chayns-components/dist/esm/react-chayns-color_picker/component/c
         top?: number;
         left?: number;
     };
-    export default class ColorArea extends React.Component<IColorAreaProps, ColorAreaState> {
+    export default class ColorArea extends React.Component<
+        IColorAreaProps,
+        ColorAreaState
+    > {
         area: any;
 
         canvas: any;
@@ -777,7 +810,10 @@ declare module 'chayns-components/dist/esm/react-chayns-color_picker/component/c
     type ColorInputState = {
         inputValue?: any;
     };
-    export default class ColorInput extends React.Component<IColorInputProps, ColorInputState> {
+    export default class ColorInput extends React.Component<
+        IColorInputProps,
+        ColorInputState
+    > {
         constructor(props: any);
 
         componentDidUpdate(prevProps: any): void;
@@ -939,7 +975,10 @@ declare module 'chayns-components/dist/esm/react-chayns-color_picker/component/h
         color: number | string;
     }
 
-    export default class HueSlider extends React.PureComponent<IHueSliderProps, {}> {
+    export default class HueSlider extends React.PureComponent<
+        IHueSliderProps,
+        {}
+    > {
         onChange: (value: any) => void;
 
         onChangeEnd: (value: any) => void;
@@ -1124,14 +1163,25 @@ declare module 'chayns-components/dist/esm/react-chayns-textstring/component/Tex
      * Loads text strings from our database and displays them. Handles replacements
      * and changing the string via `CTRL` + `Click` (only internal).
      */
-    export default class TextString extends React.Component<ITextStringProps, TextStringState> {
-        static getTextString(stringName: any, language?: any, fallback?: any): any;
+    export default class TextString extends React.Component<
+        ITextStringProps,
+        TextStringState
+    > {
+        static getTextString(
+            stringName: any,
+            language?: any,
+            fallback?: any
+        ): any;
 
         static language: string;
 
         static loadLibrary(projectName: any): Promise<any>;
 
-        static changeTextString(stringName: any, text: any, language: any): Promise<unknown>;
+        static changeTextString(
+            stringName: any,
+            text: any,
+            language: any
+        ): Promise<unknown>;
 
         static setLanguage(language: any): void;
 
@@ -1410,7 +1460,10 @@ declare module 'chayns-components/dist/esm/react-chayns-dateinfo/component/DateI
      * Formats a date or date range to be easily readable and reveals the absolute
      * date on hover.
      */
-    export default class DateInfo extends React.PureComponent<IDateInfoProps, DateInfoState> {
+    export default class DateInfo extends React.PureComponent<
+        IDateInfoProps,
+        DateInfoState
+    > {
         static getRelativeDateString: (
             date: any,
             options?: {
@@ -1425,7 +1478,11 @@ declare module 'chayns-components/dist/esm/react-chayns-dateinfo/component/DateI
             }
         ) => any;
 
-        static replace: (string: any, relativeValues: any, absoluteValues: any) => any;
+        static replace: (
+            string: any,
+            relativeValues: any,
+            absoluteValues: any
+        ) => any;
 
         static leadingZero: (value: any) => any;
 
@@ -1468,7 +1525,10 @@ declare module 'chayns-components/dist/esm/react-chayns-emoji_input/component/Em
     /**
      * A text input that allows emojis to be put in.
      */
-    export default class EmojiInput extends React.Component<IEmojiInputProps, {}> {
+    export default class EmojiInput extends React.Component<
+        IEmojiInputProps,
+        {}
+    > {
         input: any;
 
         placeholder: any;
@@ -1625,7 +1685,10 @@ declare module 'chayns-components/dist/esm/react-chayns-file_input/component/Fil
     /**
      * Accepts specified file types via dialog or drag and drop.
      */
-    export default class FileInput extends React.PureComponent<IFileInputProps, FileInputState> {
+    export default class FileInput extends React.PureComponent<
+        IFileInputProps,
+        FileInputState
+    > {
         fileInputRefs: any;
 
         itemRefs: any;
@@ -1886,7 +1949,10 @@ declare module 'chayns-components/dist/esm/react-chayns-smallwaitcursor/componen
     /**
      * A small circular loading indicator.
      */
-    export default class SmallWaitCursor extends React.PureComponent<ISmallWaitCursorProps, {}> {
+    export default class SmallWaitCursor extends React.PureComponent<
+        ISmallWaitCursorProps,
+        {}
+    > {
         render(): JSX.Element;
     }
 }
@@ -1935,7 +2001,10 @@ declare module 'chayns-components/dist/esm/react-chayns-gallery/component/Image'
         rotate?: number;
         mirror?: boolean;
     };
-    export default class Image extends React.PureComponent<IImageProps, ImageState> {
+    export default class Image extends React.PureComponent<
+        IImageProps,
+        ImageState
+    > {
         imageRef: any;
 
         constructor(props: any);
@@ -1969,7 +2038,10 @@ declare module 'chayns-components/dist/esm/react-chayns-gallery/component/ImageC
         style?: any;
     }
 
-    export default class ImageContainer extends React.PureComponent<IImageContainerProps, {}> {
+    export default class ImageContainer extends React.PureComponent<
+        IImageContainerProps,
+        {}
+    > {
         render(): JSX.Element;
     }
 }
@@ -2006,7 +2078,10 @@ declare module 'chayns-components/dist/esm/react-chayns-gallery/component/Galler
      * reordering and deletion of images and blurred image previews for images
      * loaded from `tsimg.cloud`.
      */
-    export default class Gallery extends React.Component<IGalleryProps, GalleryState> {
+    export default class Gallery extends React.Component<
+        IGalleryProps,
+        GalleryState
+    > {
         galleryOffsetX: any;
 
         galleryOffsetY: any;
@@ -2078,7 +2153,10 @@ declare module 'chayns-components/dist/esm/react-chayns-gridcalendar/component/c
         days?: any[];
     }
 
-    export default class Navigator extends React.PureComponent<INavigatorProps, {}> {
+    export default class Navigator extends React.PureComponent<
+        INavigatorProps,
+        {}
+    > {
         render(): JSX.Element;
     }
 }
@@ -2218,7 +2296,11 @@ declare module 'chayns-components/dist/esm/react-chayns-gridcalendar/component/G
 
         getNavigatorDays(weekStart: any, weekEnd: any): any[];
 
-        getEntries(dataParameter: any, startTimeParameter: any, endTimeParameter: any): any[];
+        getEntries(
+            dataParameter: any,
+            startTimeParameter: any,
+            endTimeParameter: any
+        ): any[];
 
         groupOnClick(event: any, group: any): void;
 
@@ -2240,7 +2322,10 @@ declare module 'chayns-components/dist/esm/react-chayns-image_accordion/componen
      * An accordion that has a big image and appears in a grid. Should be used
      * inside of an `ImageAccordionGroup`.
      */
-    export default class ImageAccordion extends React.PureComponent<IImageAccordionProps, {}> {
+    export default class ImageAccordion extends React.PureComponent<
+        IImageAccordionProps,
+        {}
+    > {
         render(): JSX.Element;
     }
 }
@@ -2290,7 +2375,10 @@ declare module 'chayns-components/dist/esm/react-chayns-tooltip/component/Toolti
      * clicked on. Allows to be shown imperatively by calling `.show()` or `.hide()`
      * on its reference.
      */
-    export default class Tooltip extends React.Component<ITooltipProps, TooltipState> {
+    export default class Tooltip extends React.Component<
+        ITooltipProps,
+        TooltipState
+    > {
         bubble: any;
 
         childrenWrapper: boolean;
@@ -2364,7 +2452,12 @@ declare module 'chayns-components/dist/esm/react-chayns-image_accordion/componen
 
         getPx: (style: any) => number;
 
-        handleAccordionClick: (key: any, sameRow: any, props: any, event: any) => boolean;
+        handleAccordionClick: (
+            key: any,
+            sameRow: any,
+            props: any,
+            event: any
+        ) => boolean;
 
         accordionCloseListener(): void;
 
@@ -2552,7 +2645,10 @@ declare module 'chayns-components/dist/esm/react-chayns-radiobutton/component/Ra
     /**
      * A radio button that allows to select one of multiple options.
      */
-    export default class RadioButton extends React.Component<IRadioButtonProps, {}> {
+    export default class RadioButton extends React.Component<
+        IRadioButtonProps,
+        {}
+    > {
         id: any;
 
         constructor();
@@ -2589,7 +2685,10 @@ declare module 'chayns-components/dist/esm/react-chayns-modeswitch/component/Mod
         activeModeId?: null;
         open?: boolean;
     };
-    export default class ModeSwitch extends React.Component<IModeSwitchProps, ModeSwitchState> {
+    export default class ModeSwitch extends React.Component<
+        IModeSwitchProps,
+        ModeSwitchState
+    > {
         pageYOffset: any;
 
         static getCurrentMode(): any;
@@ -2724,7 +2823,12 @@ declare module 'chayns-components/dist/esm/react-chayns-openingtimes/component/D
 
         animationendFunction: () => void;
 
-        onChange: (weekDayNumber: any, index: any, start: any, end: any) => void;
+        onChange: (
+            weekDayNumber: any,
+            index: any,
+            start: any,
+            end: any
+        ) => void;
 
         render(): JSX.Element;
     }
@@ -2772,7 +2876,10 @@ declare module 'chayns-components/dist/esm/react-chayns-openingtimes/component/O
     /**
      * An input for opening times.
      */
-    class OpeningTimes extends React.Component<IOpeningTimesProps, OpeningTimesState> {
+    class OpeningTimes extends React.Component<
+        IOpeningTimesProps,
+        OpeningTimesState
+    > {
         onValidateStateDebounce: any;
 
         constructor(props: any);
@@ -2984,11 +3091,29 @@ declare module 'chayns-components/dist/esm/react-chayns-personfinder/component/d
     import 'abortcontroller-polyfill/dist/polyfill-patch-fetch';
 
     export const fetchFriends: () => Promise<any[]>;
-    export const setFriend: (personId: any, friendship?: boolean) => Promise<boolean>;
-    export const fetchPersons: (value: any, skip: any, take: any) => Promise<any[]>;
-    export const fetchUacPersons: (uacId: any, locationId: any) => (value: any) => Promise<any[]>;
-    export const fetchSites: (value: any, skip: any, take: any) => Promise<any[]>;
-    export const fetchKnownPersons: (value: any, skip: any, take: any) => Promise<any[]>;
+    export const setFriend: (
+        personId: any,
+        friendship?: boolean
+    ) => Promise<boolean>;
+    export const fetchPersons: (
+        value: any,
+        skip: any,
+        take: any
+    ) => Promise<any[]>;
+    export const fetchUacPersons: (
+        uacId: any,
+        locationId: any
+    ) => (value: any) => Promise<any[]>;
+    export const fetchSites: (
+        value: any,
+        skip: any,
+        take: any
+    ) => Promise<any[]>;
+    export const fetchKnownPersons: (
+        value: any,
+        skip: any,
+        take: any
+    ) => Promise<any[]>;
 }
 declare module 'chayns-components/dist/esm/react-chayns-personfinder/component/data/uacGroups/UacGroupApi' {
     export const fetchGroups: () => Promise<any[]>;
@@ -3022,7 +3147,11 @@ declare module 'chayns-components/dist/esm/react-chayns-personfinder/component/d
 
         static getFriendsList: () => any[];
 
-        static setFriend: (personId: any, fullName: any, friendship?: boolean) => Promise<void>;
+        static setFriend: (
+            personId: any,
+            fullName: any,
+            friendship?: boolean
+        ) => Promise<void>;
 
         static addUpdateListener: (listener: any) => void;
 
@@ -3239,7 +3368,10 @@ declare module 'chayns-components/dist/esm/react-chayns-tag_input/component/TagI
     /**
      * A text input that allows values to be grouped as tags.
      */
-    export default class TagInput extends React.Component<ITagInputProps, TagInputState> {
+    export default class TagInput extends React.Component<
+        ITagInputProps,
+        TagInputState
+    > {
         input: any;
 
         constructor(props: any);
@@ -3295,10 +3427,18 @@ declare module 'chayns-components/dist/esm/react-chayns-input_box/component/Inpu
     export default InputBox;
 }
 declare module 'chayns-components/dist/esm/react-chayns-personfinder/utils/getList' {
-    export default function getList(data: any, orm: any, inputValue: any): any[];
+    export default function getList(
+        data: any,
+        orm: any,
+        inputValue: any
+    ): any[];
 }
 declare module 'chayns-components/dist/esm/react-chayns-personfinder/utils/getListLength' {
-    export default function getListLength(data: any, orm: any, inputValue: any): number;
+    export default function getListLength(
+        data: any,
+        orm: any,
+        inputValue: any
+    ): number;
 }
 declare module 'chayns-components/dist/esm/react-chayns-personfinder/utils/getSelectedListItem' {
     export default function getSelectedListItem(
@@ -3316,7 +3456,11 @@ declare module 'chayns-components/dist/esm/react-chayns-personfinder/component/D
     export default Divider;
 }
 declare module 'chayns-components/dist/esm/react-chayns-personfinder/utils/getText' {
-    export default function getText(key: any, addText?: boolean, lang?: any): string;
+    export default function getText(
+        key: any,
+        addText?: boolean,
+        lang?: any
+    ): string;
 }
 declare module 'chayns-components/dist/esm/react-chayns-personfinder/component/LoadMore' {
     type LoadMoreProps = {
@@ -3512,7 +3656,10 @@ declare module 'chayns-components/dist/esm/react-chayns-personfinder/component/P
         focusIndex?: number;
     };
 
-    class PersonFinderView extends React.Component<IPersonFinderViewProps, PersonFinderViewState> {
+    class PersonFinderView extends React.Component<
+        IPersonFinderViewProps,
+        PersonFinderViewState
+    > {
         animationFrameId: number;
 
         boxRef: any;
@@ -3653,7 +3800,10 @@ declare module 'chayns-components/dist/esm/react-chayns-personfinder/component/S
         props?: any;
     }
 
-    class SimplePersonFinder extends React.Component<ISimplePersonFinderProps, {}> {
+    class SimplePersonFinder extends React.Component<
+        ISimplePersonFinderProps,
+        {}
+    > {
         multipleFinder: any;
 
         constructor(props: any);
@@ -3832,7 +3982,10 @@ declare module 'chayns-components/dist/esm/react-chayns-receiverinput/component/
         fixed?: boolean;
     }
 
-    export default class ChosenMember extends React.Component<IChosenMemberProps, {}> {
+    export default class ChosenMember extends React.Component<
+        IChosenMemberProps,
+        {}
+    > {
         remove: () => void;
 
         render(): JSX.Element;
@@ -4032,7 +4185,10 @@ declare module 'chayns-components/dist/esm/react-chayns-rfid_input/component/Rfi
     /**
      * A component to take in an RFID signal.
      */
-    export default class RfidInput extends React.Component<IRfidInputProps, RfidInputState> {
+    export default class RfidInput extends React.Component<
+        IRfidInputProps,
+        RfidInputState
+    > {
         static pretifyRfid(rfid: any): any;
 
         static isNfcAvailable(): any;
@@ -4104,7 +4260,10 @@ declare module 'chayns-components/dist/esm/react-chayns-scrollview/component/Scr
      * A scrollable container with a custom scrollbar that looks great on every
      * device.
      */
-    export default class ScrollView extends React.Component<IScrollViewProps, ScrollViewState> {
+    export default class ScrollView extends React.Component<
+        IScrollViewProps,
+        ScrollViewState
+    > {
         bar: any;
 
         children: any;
@@ -4259,7 +4418,10 @@ declare module 'chayns-components/dist/esm/react-chayns-selectlist/component/Sel
     /**
      * A vertical list of radio buttons that reveal content when selected.
      */
-    export default class SelectList extends React.Component<ISelectListProps, SelectListState> {
+    export default class SelectList extends React.Component<
+        ISelectListProps,
+        SelectListState
+    > {
         changing: boolean;
 
         selectListId: string;
@@ -4307,7 +4469,9 @@ declare module 'chayns-components/dist/esm/react-chayns-setupwizard/component/se
     export default SetupWizardContext;
 }
 declare module 'chayns-components/dist/esm/react-chayns-setupwizard/component/withSetupWizardContext' {
-    const withSetupWizardContext: (WrappedComponent: any) => (props: any) => JSX.Element;
+    const withSetupWizardContext: (
+        WrappedComponent: any
+    ) => (props: any) => JSX.Element;
     export default withSetupWizardContext;
 }
 declare module 'chayns-components/dist/esm/react-chayns-setupwizard/component/SetupItem' {
@@ -4346,7 +4510,10 @@ declare module 'chayns-components/dist/esm/react-chayns-setupwizard/component/Se
     /**
      * A set of steps the user has to go through sequentially.
      */
-    class SetupWizard extends React.Component<ISetupWizardProps, SetupWizardState> {
+    class SetupWizard extends React.Component<
+        ISetupWizardProps,
+        SetupWizardState
+    > {
         completedSteps: any;
 
         constructor(props: any);
@@ -4438,7 +4605,11 @@ declare module 'chayns-components/dist/esm/react-chayns-sharingbar/component/sha
     }[];
 }
 declare module 'chayns-components/dist/esm/react-chayns-sharingbar/component/sharingActions' {
-    export default function share(provider: any, link: any, linkText: any): void;
+    export default function share(
+        provider: any,
+        link: any,
+        linkText: any
+    ): void;
 }
 declare module 'chayns-components/dist/esm/react-chayns-sharingbar/component/sharingHelper' {
     export function getAvailableShareProviders(): any;
@@ -5259,7 +5430,8 @@ declare module 'chayns-components/dist/esm/react-chayns-position_input/component
 }
 declare module 'chayns-components/dist/esm/react-chayns-scrollview/utils/requestAnimationFrame' {
     const requestAnimationFrame:
-        | (((callback: FrameRequestCallback) => number) & typeof globalThis.requestAnimationFrame)
+        | (((callback: FrameRequestCallback) => number) &
+              typeof globalThis.requestAnimationFrame)
         | typeof setImmediate
         | ((c: any) => NodeJS.Timeout);
     export default requestAnimationFrame;

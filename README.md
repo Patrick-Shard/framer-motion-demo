@@ -24,7 +24,7 @@ Then you will have the following commands available:
 
 ### `npm run dev`
 
-This starts the project with a local server for development. Typically this will
+This starts the project with a local server for development. Typically, this will
 be on [`http://localhost:1234/`](http://localhost:1234/), but this
 [can be adjusted](https://github.com/TobitSoftware/chayns-toolkit#development-options).
 
@@ -41,7 +41,7 @@ Checks your project for errors and code quality.
 
 ### `npm run format`
 
-Automatically formats all of the source code in your project.
+Automatically formats all the source code in your project.
 
 ---
 
